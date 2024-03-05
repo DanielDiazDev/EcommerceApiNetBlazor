@@ -1,0 +1,88 @@
+﻿@page "/register"
+@layout LoginLayout
+
+
+@inject IUserService _userService
+@inject NavigationManager _navServicio
+@inject IToastService _toastService
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-7">
+            <div class="card rounded-lg mt-5">
+                <div class="card-header"><h3 class="text-center font-weight-light my-4">Crear Cuenta</h3></div>
+                <div class="card-body">
+
+                    <EditForm Model="userDTO" OnValidSubmit="SaveChanges">
+                        <DataAnnotationsValidator></DataAnnotationsValidator>
+
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="inputFullName" type="text" placeholder="name@example.com" @bind-value="userDTO.FullName" autocomplete="off" />
+                            <label for="inputFullName">Nombre Completo</label>
+                            <ValidationMessage For="@(()=>userDTO.FullName)" />
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" @bind-value="userDTO.Email" autocomplete="off" />
+                            <label for="inputEmail">Correo</label>
+                            <ValidationMessage For="@(()=>userDTO.Email)" />
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3 mb-md-0">
+                                    <input class="form-control" id="inputPassword" type="password" placeholder="Create a password" @bind-value="userDTO.Password" autocomplete="off" />
+                                    <label for="inputPassword">Contraseña</label>
+                                    <ValidationMessage For="@(()=>userDTO.Password)" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3 mb-md-0">
+                                    <input class="form-control" id="inputPasswordConfirm" type="password" placeholder="Confirm password" @bind-value="userDTO.ConfirmPassword" autocomplete="off" />
+                                    <label for="inputPasswordConfirm">Confirmar Contraseña</label>
+                                    <ValidationMessage For="@(()=>userDTO.ConfirmPassword)" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 mb-0">
+                            <div class="d-grid"><button class="btn btn-primary btn-block" type="submit">Registrarse</button></div>
+                        </div>
+                    </EditForm>
+
+                </div>
+                <div class="card-footer text-center py-3">
+                    <div class="small"><a href="/login">Tienes una cuenta? ir a login</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private UserDTO userDTO = new UserDTO();
+
+    private async Task SaveChanges()
+    {
+        if (userDTO.Password != userDTO.ConfirmPassword)
+        {
+            _toastService.ShowWarning("Las contraseñas no coinciden");
+            return;
+        }
+
+        userDTO.Role = "Client";
+        var response = await _userService.Create(userDTO);
+
+        if (response.IsSuccess)
+        {
+            _toastService.ShowSuccess("Su cuenta ha sido creada");
+            _navServicio.NavigateTo("/login");
+
+        }
+        else
+        {
+            _toastService.ShowError("No se pudo crear su cuenta, intente mas tarde");
+        }
+
+    }
+
+
+}

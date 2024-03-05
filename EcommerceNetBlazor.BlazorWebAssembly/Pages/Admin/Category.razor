@@ -1,0 +1,95 @@
+﻿@page "/category"
+@page "/category/{Id:int}"
+
+@inject ICategoryService _categoryService
+@inject IToastService _toastService
+@inject NavigationManager _navigationManager
+@attribute [Authorize(Roles ="Administrator")]
+
+<div class="row justify-content-center  mt-3">
+    <p class="col-sm-12 col-md-8 col-xl-10 h4 mt-2">@title</p>
+</div>
+<div class="row justify-content-center  mt-3">
+    <div class="col-sm-12 col-md-8 col-xl-10">
+
+        <EditForm Model="categoryDTO" OnValidSubmit="SaveChanges">
+            <DataAnnotationsValidator></DataAnnotationsValidator>
+            <div class="input-group">
+                <span class="input-group-text bg-light">Nombre</span>
+                <input type="text" class="form-control" @bind-value="categoryDTO.Name">
+            </div>
+            <ValidationMessage For="@(()=>categoryDTO.Name)" />
+
+            <div class="mt-3">
+                <button type="submit" class="btn btn-primary" style="width:130px">@button</button>
+                <a href="/categories" class="btn btn-secondary" style="width:130px">Volver</a>
+            </div>
+        </EditForm>
+    </div>
+</div>
+@code {
+    [Parameter]
+    public int Id { get; set; }
+    private string title = "Nueva Categoria";
+    private string button = "Crear";
+    private CategoryDTO categoryDTO = new CategoryDTO();
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (Id != 0)
+        {
+            title = "Editar Categoria";
+            button = "Actualizar";
+
+            var response = await _categoryService.Get(Id);
+            if (response.IsSuccess!)
+            {
+                categoryDTO = (CategoryDTO)response.Result!;
+            }
+            else
+                _toastService.ShowWarning(response.Message);
+        }
+    }
+    private async Task SaveChanges()
+    {
+        bool correct = true;
+        string message = string.Empty;
+        if (Id != 0)
+        {
+            var response = await _categoryService.Edit(categoryDTO);
+            if (response.IsSuccess)
+            {
+                message = "Categoria fue modificada";
+            }
+            else
+            {
+                correct = false;
+                message = "No pudo editar";
+            }
+        }
+        else
+        {
+            var response = await _categoryService.Create(categoryDTO);
+            if (response.IsSuccess)
+            {
+                message = "Categoria fue creada";
+            }
+            else
+            {
+                correct = false;
+                message = "No pudo crear";
+            }
+
+        }
+
+        if (correct)
+        {
+            _toastService.ShowSuccess(message);
+            _navigationManager.NavigateTo("/categories");
+        }
+        else
+            _toastService.ShowWarning(message);
+
+    }
+}
+}

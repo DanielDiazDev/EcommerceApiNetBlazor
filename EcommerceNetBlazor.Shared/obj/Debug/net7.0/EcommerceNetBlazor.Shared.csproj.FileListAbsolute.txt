@@ -1,0 +1,12 @@
+C:\Users\User\Desktop\Practica C#\EcommerceNetBlazor\EcommerceNetBlazor.Shared\bin\Debug\net7.0\EcommerceNetBlazor.Shared.deps.json
+C:\Users\User\Desktop\Practica C#\EcommerceNetBlazor\EcommerceNetBlazor.Shared\bin\Debug\net7.0\EcommerceNetBlazor.Shared.dll
+C:\Users\User\Desktop\Practica C#\EcommerceNetBlazor\EcommerceNetBlazor.Shared\bin\Debug\net7.0\EcommerceNetBlazor.Shared.pdb
+C:\Users\User\Desktop\Practica C#\EcommerceNetBlazor\EcommerceNetBlazor.Shared\obj\Debug\net7.0\EcommerceNetBlazor.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Practica C#\EcommerceNetBlazor\EcommerceNetBlazor.Shared\obj\Debug\net7.0\EcommerceNetBlazor.Shared.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Practica C#\EcommerceNetBlazor\EcommerceNetBlazor.Shared\obj\Debug\net7.0\EcommerceNetBlazor.Shared.AssemblyInfo.cs
+C:\Users\User\Desktop\Practica C#\EcommerceNetBlazor\EcommerceNetBlazor.Shared\obj\Debug\net7.0\EcommerceNetBlazor.Shared.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Practica C#\EcommerceNetBlazor\EcommerceNetBlazor.Shared\obj\Debug\net7.0\EcommerceNetBlazor.Shared.dll
+C:\Users\User\Desktop\Practica C#\EcommerceNetBlazor\EcommerceNetBlazor.Shared\obj\Debug\net7.0\refint\EcommerceNetBlazor.Shared.dll
+C:\Users\User\Desktop\Practica C#\EcommerceNetBlazor\EcommerceNetBlazor.Shared\obj\Debug\net7.0\EcommerceNetBlazor.Shared.pdb
+C:\Users\User\Desktop\Practica C#\EcommerceNetBlazor\EcommerceNetBlazor.Shared\obj\Debug\net7.0\ref\EcommerceNetBlazor.Shared.dll
+C:\Users\User\Desktop\Practica C#\EcommerceNetBlazor\EcommerceNetBlazor.Shared\obj\Debug\net7.0\EcommerceNetBlazor.Shared.sourcelink.json

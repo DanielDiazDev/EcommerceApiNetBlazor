@@ -1,0 +1,95 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = EcommerceNetBlazor.BlazorWebAssembly
+build_property.RootNamespace = EcommerceNetBlazor.BlazorWebAssembly
+build_property.ProjectDir = C:\Users\User\Desktop\Practica C#\EcommerceNetBlazor\EcommerceNetBlazor.BlazorWebAssembly\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\User\Desktop\Practica C#\EcommerceNetBlazor\EcommerceNetBlazor.BlazorWebAssembly
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/User/Desktop/Practica C\#/EcommerceNetBlazor/EcommerceNetBlazor.BlazorWebAssembly/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/Practica C\#/EcommerceNetBlazor/EcommerceNetBlazor.BlazorWebAssembly/Pages/Admin/Categories.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2F0ZWdvcmllcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/Practica C\#/EcommerceNetBlazor/EcommerceNetBlazor.BlazorWebAssembly/Pages/Admin/Category.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2F0ZWdvcnkucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/Practica C\#/EcommerceNetBlazor/EcommerceNetBlazor.BlazorWebAssembly/Pages/Admin/Dashboard.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cRGFzaGJvYXJkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/Practica C\#/EcommerceNetBlazor/EcommerceNetBlazor.BlazorWebAssembly/Pages/Admin/Product.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUHJvZHVjdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/Practica C\#/EcommerceNetBlazor/EcommerceNetBlazor.BlazorWebAssembly/Pages/Admin/Products.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUHJvZHVjdHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/Practica C\#/EcommerceNetBlazor/EcommerceNetBlazor.BlazorWebAssembly/Pages/Admin/User.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/Practica C\#/EcommerceNetBlazor/EcommerceNetBlazor.BlazorWebAssembly/Pages/Admin/Users.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcnMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/Practica C\#/EcommerceNetBlazor/EcommerceNetBlazor.BlazorWebAssembly/Pages/Authorization/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aG9yaXphdGlvblxMb2dpbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/Practica C\#/EcommerceNetBlazor/EcommerceNetBlazor.BlazorWebAssembly/Pages/Authorization/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aG9yaXphdGlvblxSZWdpc3Rlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/Practica C\#/EcommerceNetBlazor/EcommerceNetBlazor.BlazorWebAssembly/Pages/Store/Cart.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RvcmVcQ2FydC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/Practica C\#/EcommerceNetBlazor/EcommerceNetBlazor.BlazorWebAssembly/Pages/Store/Catalog.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RvcmVcQ2F0YWxvZy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/Practica C\#/EcommerceNetBlazor/EcommerceNetBlazor.BlazorWebAssembly/Pages/Store/Detail.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RvcmVcRGV0YWlsLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/Practica C\#/EcommerceNetBlazor/EcommerceNetBlazor.BlazorWebAssembly/Shared/LoginLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXExvZ2luTGF5b3V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/Practica C\#/EcommerceNetBlazor/EcommerceNetBlazor.BlazorWebAssembly/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/Practica C\#/EcommerceNetBlazor/EcommerceNetBlazor.BlazorWebAssembly/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/Practica C\#/EcommerceNetBlazor/EcommerceNetBlazor.BlazorWebAssembly/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/Practica C\#/EcommerceNetBlazor/EcommerceNetBlazor.BlazorWebAssembly/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 

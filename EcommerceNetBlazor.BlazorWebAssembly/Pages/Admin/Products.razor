@@ -1,0 +1,137 @@
+﻿@page "/products"
+@inject IProductService _productService
+@inject IToastService _toastService
+@inject SweetAlertService _swalService
+
+@attribute [Authorize(Roles = "Administrator")];
+
+<div class="row justify-content-center  mt-3">
+    <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+        <div class="d-grid gap-1 col-12 mx-auto">
+            <a class="btn btn-primary" href="/product">Nuevo producto</a>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-8 col-xl-9 mb-4">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Buscar producto..." @bind-value="find">
+            <button class="btn btn-outline-secondary" type="button" @onclick="(async()=> await GetProducts(find))">
+                <i class="oi oi-magnifying-glass"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="row gx-4 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 justify-content-start mt-2">
+
+    @if (list != null)
+    {
+
+        foreach (var item in list)
+        {
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <!-- Sale badge-->
+                    @if (item.CreatedDate.HasValue && DateTime.Now < item.CreatedDate.Value.AddDays(30))
+                    {
+                        <div class="badge bg-primary text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Nuevo</div>
+                    }
+
+                    <!-- Product image-->
+                    <img class="card-img-top border-dark border-1" src="@item.Image">
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">@item.Name</h5>
+                            <!-- Product price-->
+                            @if (item.PriceOffer != 0 && item.PriceOffer < item.Price)
+                            {
+                                <span class="text-danger text-decoration-line-through">S/. @item.Price</span>
+                                <span>S /.@item.PriceOffer</span>
+                            }
+                            else
+                            {
+                                <span>S /.@item.Price</span>
+                            }
+
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer bg-transparent">
+                        <div class="row justify-content-between">
+                            <a class="col-5 btn btn-sm btn-outline-primary mt-auto" href="/product/@item.Id"><i class="oi oi-pencil fs-5"></i></a>
+                            <button class="col-5 btn btn-sm btn-outline-danger mt-auto" @onclick="(async () => await Delete(item))">
+                                <i class="oi oi-trash fs-5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+
+    }
+    else
+    {
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    }
+
+
+</div>
+
+
+
+@code {
+     private List<ProductDTO>? list = null;
+    private string find = "";
+
+    private async Task GetProducts(string value = "")
+    {
+        var response = await _productService.List(value);
+        if (response.IsSuccess)
+        {
+            list = (List<ProductDTO>)response.Result!;
+        }
+        else
+        {
+            list = new List<ProductDTO>();
+        }
+
+    }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetProducts();
+    }
+
+    private async Task Delete(ProductDTO model)
+    {
+        SweetAlertResult result = await _swalService.FireAsync(new SweetAlertOptions
+            {
+                Title = "Esta seguro?",
+                Text = $"Eliminar producto: {model.Name}",
+                Icon = SweetAlertIcon.Warning,
+                ShowCancelButton = true,
+                ConfirmButtonText = "Si, eliminar",
+                CancelButtonText = "No, volver",
+            });
+
+        if (result.IsConfirmed)
+        {
+            var response = await _productService.Delete(model.Id);
+            if (response.IsSuccess)
+            {
+                await GetProducts();
+                _toastService.ShowSuccess("Producto fue eliminado");
+            }
+            else
+            {
+                _toastService.ShowWarning(response.Message);
+            }
+        }
+
+}
+}
